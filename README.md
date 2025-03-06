@@ -21,11 +21,11 @@ a best case input for your implementation look like, what does a worst case
 input look like? How would this complexity change if you generated permutations
 randomly without memory instead of systematically trying them?
 
-The runtime complexity of the algorithm is $N * N!$, this is because you will run through every permutation
-of the list at worst case and $N * N!/2$ on average case which is still $N * N!$. The extra N multiplied is because 
+The runtime complexity of the algorithm is $O(N * N!)$, this is because you will run through every permutation
+of the list at worst case and $O(N * N!/2)$ on average case which is still $O(N * N!)$. The extra N multiplied is because 
 inside every permutation, you run over the whole list to check if it is sorted or not, doing this provides
 an extra N complexity. The best case for me would be a 
 list that is already sorted because it would pass the first test to see if it is sorted. The worst case
 is when the list is in reverse order and would produce an N! runtime. This would become more of a probability
 if I were to randomly generate permutations, this is because at any given time there is a $1/{N * N!}$ chance of 
-finding the correct list. This is hard to translate to a complexity but it would hopefully be about $N * N!$.
+finding the correct list. This is hard to translate to a complexity but it would hopefully be about $O(N * N!)$.
