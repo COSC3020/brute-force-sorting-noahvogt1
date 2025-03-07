@@ -1,4 +1,7 @@
 # Brute-Force Sorting
+I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
+
+I am sorry I should've been more descriptive. I attempted to create my own finding next perumatation function by doing it recursively down to the base case and swapping them and then moving up and checking if it was sorted along the way. However, I was unable to get it to work quite right so I asked chatGPT for an algorithm(pseudocode) to find the next permutation. I read what it was trying to do and learned what it meant. Then I implimented it in code with some minor help from chatGPT to help understand it better.
 
 We talked about the complexity of the sorting problem, and used an argument over
 all permutations of a list to be sorted to determine its complexity. Implement
@@ -18,5 +21,16 @@ a best case input for your implementation look like, what does a worst case
 input look like? How would this complexity change if you generated permutations
 randomly without memory instead of systematically trying them?
 
-Describe your reasoning and the conclusion you've come to. Your reasoning is the
-most important part. Add your answer to this markdown file.
+The runtime complexity of the algorithm is $O(N * N!)$, this is because you will run through every permutation
+of the list at worst case and $O(N * N!/2)$ on average case which is still $O(N * N!)$. The extra N multiplied is because 
+inside every permutation, you run over the whole list to check if it is sorted or not, doing this provides
+an extra N complexity. The best case for me would be a list that is already sorted because it would pass the 
+first test to see if it is sorted. The best case complexity would be $O(N)$ because it would run through the list
+once to check if it is sorted. The worst case
+is when the list is in reverse order and would produce an N! runtime. This would become more of a probability
+if I were to randomly generate permutations, this is because at any given time there is a $1/{N * N!}$ chance of 
+finding the correct list. This is hard to translate to a complexity but it would hopefully be about $O(N * N!)$.
+This does not technically provide a sure chance of finding the proper sorted list because it is always a possibility -
+no matter how improbable - that it never sorts. For example, if you flip a coin it has a 50% chance of being heads; however,
+maybe you flip the coin 100 times but it lands on tails every time. Even though this is highly improbable, it is still
+possible to go on forever.
