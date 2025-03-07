@@ -24,8 +24,13 @@ randomly without memory instead of systematically trying them?
 The runtime complexity of the algorithm is $O(N * N!)$, this is because you will run through every permutation
 of the list at worst case and $O(N * N!/2)$ on average case which is still $O(N * N!)$. The extra N multiplied is because 
 inside every permutation, you run over the whole list to check if it is sorted or not, doing this provides
-an extra N complexity. The best case for me would be a 
-list that is already sorted because it would pass the first test to see if it is sorted. The worst case
+an extra N complexity. The best case for me would be a list that is already sorted because it would pass the 
+first test to see if it is sorted. The best case complexity would be $O(N)$ because it would run through the list
+once to check if it is sorted. The worst case
 is when the list is in reverse order and would produce an N! runtime. This would become more of a probability
 if I were to randomly generate permutations, this is because at any given time there is a $1/{N * N!}$ chance of 
 finding the correct list. This is hard to translate to a complexity but it would hopefully be about $O(N * N!)$.
+This does not technically provide a sure chance of finding the proper sorted list because it is always a possibility -
+no matter how improbable - that it never sorts. For example, if you flip a coin it has a 50% chance of being heads; however,
+maybe you flip the coin 100 times but it lands on tails every time. Even though this is highly improbable, it is still
+possible to go on forever.
